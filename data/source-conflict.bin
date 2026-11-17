@@ -2,7 +2,9 @@
   "kind": "daily_page",
   "id": "daily_page-A",
   "revision": "v1",
-  "period": "2026-11-13",
-  "subject": "sample-A",
-  "state": "corrected-copy"
+  "observed_on": "2026-11-13",
+  "published_on": "2026-11-14",
+  "region": "全国",
+  "price_cny_kg": 14.79,
+  "variant": "conflicting-copy"
 }

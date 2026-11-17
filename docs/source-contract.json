@@ -1,0 +1,26 @@
+{
+  "roles": [
+    "daily_page",
+    "price_table"
+  ],
+  "relation_field": "region",
+  "required_fields": {
+    "daily_page": [
+      "observed_on",
+      "published_on",
+      "region",
+      "price_cny_kg"
+    ],
+    "price_table": [
+      "week_start",
+      "week_end",
+      "region",
+      "mean_cny_kg"
+    ]
+  },
+  "source_identity": [
+    "kind",
+    "id",
+    "revision"
+  ]
+}
