@@ -1,0 +1,33 @@
+{
+  "allowed_origins": [
+    "https://local-source-001.example.test"
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-001.example.test/records/daily_page-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-1.bin",
+        "status": 200,
+        "bytes": 145,
+        "sha256": "a7ab11a34e68a065656fa1246ffb28dcaa3f1814434f49cf2170d85d6d29df20"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-001.example.test/records/price_table-B",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-2.bin",
+        "status": 200,
+        "bytes": 145,
+        "sha256": "ae5648a69c3db79f4cdbe7511931538caf8ebb4694d65578c51974b7bb0ad49e"
+      }
+    }
+  ]
+}
