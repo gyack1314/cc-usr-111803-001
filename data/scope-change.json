@@ -1,0 +1,18 @@
+{
+  "allowed_origins": [
+    "https://local-source-001.example.test"
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-001.example.test/records/daily_page-A",
+      "kind": "daily_page",
+      "required": true
+    },
+    {
+      "url": "https://local-source-001.example.test/records/price_correction-A",
+      "kind": "price_correction",
+      "required": true
+    }
+  ],
+  "steps": []
+}
