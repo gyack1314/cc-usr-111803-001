@@ -45,3 +45,11 @@ def release_verified(connection,collection):
     if not current['publishable'] or not current['coverage']['expected'] or current['coverage']['missing_required']:
         raise ValueError('当前资料尚未核实或来源目录缺项')
     return release(connection,collection)
+
+
+def release_verified(connection,collection):
+    """只发布当前双来源已核实且目录完整的视图。"""
+    current=overview(connection,collection)
+    if not current['publishable'] or not current['coverage']['expected'] or current['coverage']['missing_required']:
+        raise ValueError('当前资料尚未核实或来源目录缺项')
+    return release(connection,collection)
