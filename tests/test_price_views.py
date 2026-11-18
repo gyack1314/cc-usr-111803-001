@@ -20,5 +20,6 @@ class PriceViews(unittest.TestCase):
             weekly = weeks(connection, 'sample')
             self.assertEqual(daily[0]['observed_on'], '2026-11-11')
             self.assertEqual(weekly[0]['observed_days'], ['2026-11-11'])
-            self.assertEqual(weekly[0]['status'], '有日价可核')
+            self.assertEqual(weekly[0]['status'], '覆盖不完整')
+            self.assertEqual(len(weekly[0]['missing_days']), 6)
             connection.close()
