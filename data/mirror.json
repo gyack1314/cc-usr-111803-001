@@ -1,0 +1,34 @@
+{
+  "allowed_origins": [
+    "https://local-source-001.example.test"
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-001.example.test/archive/daily_page-A-copy",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-1.bin",
+        "status": 200,
+        "bytes": 190,
+        "sha256": "f93a937b9250174668c6239c54f4840d7fda6831a1e92ebe482722900f820a30"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-001.example.test/archive/daily_page-A-copy",
+      "kind": "daily_page",
+      "required": true,
+      "expected_revision": "v1"
+    },
+    {
+      "url": "https://local-source-001.example.test/records/price_table-B",
+      "kind": "price_table",
+      "required": true,
+      "expected_revision": "v1"
+    }
+  ]
+}
