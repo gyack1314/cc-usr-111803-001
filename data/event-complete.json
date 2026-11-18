@@ -1,0 +1,37 @@
+{
+  "allowed_origins": [
+    "https://local-source-001.example.test"
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-001.example.test/records/daily_page-A",
+      "kind": "daily_page",
+      "required": true
+    },
+    {
+      "url": "https://local-source-001.example.test/records/price_table-B",
+      "kind": "price_table",
+      "required": true
+    },
+    {
+      "url": "https://local-source-001.example.test/records/price_correction-A",
+      "kind": "price_correction",
+      "required": true
+    }
+  ],
+  "steps": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://local-source-001.example.test/records/price_correction-A",
+        "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "response": {
+        "file": "source-event.bin",
+        "status": 200,
+        "bytes": 202,
+        "sha256": "4be885aa65884ae9d1d59ff0c49fab2999cb772fb11dc49f9935f6e8577fafcb"
+      }
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 {
   "roles": [
     "daily_page",
-    "price_table"
+    "price_table",
+    "price_correction"
   ],
   "relation_field": "region",
   "required_fields": {
@@ -16,6 +17,12 @@
       "week_end",
       "region",
       "mean_cny_kg"
+    ],
+    "price_correction": [
+      "region",
+      "target_observed_on",
+      "issued_on",
+      "replacement_cny_kg"
     ]
   },
   "source_identity": [
