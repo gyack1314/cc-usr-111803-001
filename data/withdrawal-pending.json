@@ -1,0 +1,12 @@
+{
+  "allowed_origins": ["https://local-source-001.example.test"],
+  "steps": [
+    {"request":{"method":"GET","url":"https://local-source-001.example.test/records/daily_page-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"source-daily-v2.bin","status":200,"bytes":181,"sha256":"c14efecf8a71ce18a0f321b3497f5ebf785fdd2717fb8657aec5abbd0abd53f6"}}
+  ],
+  "sources": [
+    {"url":"https://local-source-001.example.test/records/daily_page-A","kind":"daily_page","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-001.example.test/records/price_table-B","kind":"price_table","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-001.example.test/records/price_correction-A","kind":"price_correction","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-001.example.test/records/price_correction_retraction-A","kind":"price_correction_retraction","required":true,"expected_revision":"v1"}
+  ]
+}

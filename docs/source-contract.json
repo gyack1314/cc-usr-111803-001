@@ -2,7 +2,8 @@
   "roles": [
     "daily_page",
     "price_table",
-    "price_correction"
+    "price_correction",
+    "price_correction_retraction"
   ],
   "relation_field": "region",
   "required_fields": {
@@ -23,6 +24,13 @@
       "target_observed_on",
       "issued_on",
       "replacement_cny_kg"
+    ],
+    "price_correction_retraction": [
+      "correction_id",
+      "region",
+      "target_observed_on",
+      "issued_on",
+      "reason"
     ]
   },
   "source_identity": [

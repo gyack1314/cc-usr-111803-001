@@ -1,0 +1,10 @@
+{
+  "kind": "price_correction",
+  "id": "price_correction-A",
+  "revision": "v2",
+  "correction_id": "C-1",
+  "region": "全国",
+  "target_observed_on": "2026-11-11",
+  "issued_on": "2026-11-15",
+  "replacement_cny_kg": 14.72
+}

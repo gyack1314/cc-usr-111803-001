@@ -1,0 +1,12 @@
+{
+  "allowed_origins": ["https://local-source-001.example.test"],
+  "steps": [
+    {"request":{"method":"GET","url":"https://local-source-001.example.test/records/price_correction_retraction-A","body_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},"response":{"file":"source-correction-withdrawal.bin","status":200,"bytes":246,"sha256":"b556ada5bc7c8795b59f709320a9c75af3e17c73f44be8cc7bd6b757dc575e24"}}
+  ],
+  "sources": [
+    {"url":"https://local-source-001.example.test/records/daily_page-A","kind":"daily_page","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-001.example.test/records/price_table-B","kind":"price_table","required":true,"expected_revision":"v1"},
+    {"url":"https://local-source-001.example.test/records/price_correction-A","kind":"price_correction","required":true,"expected_revision":"v2"},
+    {"url":"https://local-source-001.example.test/records/price_correction_retraction-A","kind":"price_correction_retraction","required":true,"expected_revision":"v1"}
+  ]
+}
