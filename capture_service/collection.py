@@ -55,6 +55,16 @@ def progress(connection, collection):
                 'SELECT source_url,body_sha256,received_at FROM collection_progress WHERE collection=? ORDER BY source_url',
                 (collection,))]
 
+def pending(connection, collection):
+    """列出还没有取得正文的目录来源，供中断后的下一轮接收使用。"""
+    initialize(connection)
+    return [dict(url=row[0], kind=row[1], expected_revision=row[2])
+            for row in connection.execute(
+                'SELECT s.source_url,s.source_kind,s.expected_revision FROM collection_sources s '
+                'WHERE s.collection=? AND s.required=1 AND NOT EXISTS ('
+                'SELECT 1 FROM collection_progress p WHERE p.collection=s.collection '
+                'AND p.source_url=s.source_url) ORDER BY s.source_url', (collection,))]
+
 def coverage(connection, collection):
     """区分来源接收进度与已核实的业务资料范围。"""
     initialize(connection)
