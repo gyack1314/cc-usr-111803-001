@@ -12,8 +12,8 @@
       "response": {
         "file": "source-1.bin",
         "status": 200,
-        "bytes": 190,
-        "sha256": "f93a937b9250174668c6239c54f4840d7fda6831a1e92ebe482722900f820a30"
+        "bytes": 181,
+        "sha256": "77ec238c24a92f9ab296f8f34fecffd3cdcdf441e936957c64ea3b748822e097"
       }
     },
     {

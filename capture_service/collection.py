@@ -98,6 +98,12 @@ def coverage(connection, collection):
                 (row['payload'].get('region'), row['payload'].get('target_observed_on')) in daily_keys
                 for row in source_entities
             )
+        elif kind == 'price_correction_retraction':
+            verified_source = any(
+                row['type'] == 'price_correction_retraction' and
+                (row['payload'].get('region'), row['payload'].get('target_observed_on')) in daily_keys
+                for row in source_entities
+            )
         sources.append(dict(url=url, kind=kind, required=bool(required),
                             expected_revision=expected_revision,
                             received_versions=received,
