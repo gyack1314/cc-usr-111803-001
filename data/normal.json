@@ -29,5 +29,17 @@
         "sha256": "b24154b289af948ca4732a48ca44746c243d14c5136dd32dc7d50d5ba1c728ec"
       }
     }
+  ],
+  "sources": [
+    {
+      "url": "https://local-source-001.example.test/records/daily_page-A",
+      "kind": "daily_page",
+      "required": true
+    },
+    {
+      "url": "https://local-source-001.example.test/records/price_table-B",
+      "kind": "price_table",
+      "required": true
+    }
   ]
 }
