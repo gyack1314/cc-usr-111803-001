@@ -9,6 +9,11 @@ CREATE TABLE IF NOT EXISTS receipts(
   collection TEXT NOT NULL, body_sha256 TEXT NOT NULL, source_url TEXT NOT NULL,
   status INTEGER NOT NULL, raw BLOB NOT NULL,
   PRIMARY KEY(collection,body_sha256));
+CREATE TABLE IF NOT EXISTS receipt_origins(
+  collection TEXT NOT NULL, body_sha256 TEXT NOT NULL, source_url TEXT NOT NULL,
+  status INTEGER NOT NULL,
+  PRIMARY KEY(collection,body_sha256,source_url),
+  FOREIGN KEY(collection,body_sha256) REFERENCES receipts(collection,body_sha256));
 CREATE TABLE IF NOT EXISTS entities(
   collection TEXT NOT NULL, entity_type TEXT NOT NULL, entity_id TEXT NOT NULL,
   version TEXT NOT NULL, receipt_sha256 TEXT NOT NULL, payload_json TEXT NOT NULL,
@@ -30,6 +35,8 @@ def receive(c, collection, raw, receipt):
     with c:
         c.execute('INSERT OR IGNORE INTO receipts VALUES(?,?,?,?,?)',
                   (collection,digest,receipt['url'],receipt['status'],raw))
+        c.execute('INSERT OR IGNORE INTO receipt_origins VALUES(?,?,?,?)',
+                  (collection,digest,receipt['url'],receipt['status']))
         for row in rows:
             payload=json.dumps(row['payload'],ensure_ascii=False,sort_keys=True)
             key=(collection,row['type'],row['id'],row['version'])

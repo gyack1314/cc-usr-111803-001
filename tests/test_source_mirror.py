@@ -20,4 +20,8 @@ class SourceMirror(unittest.TestCase):
             urls = {row[0] for row in connection.execute(
                 'SELECT source_url FROM collection_progress WHERE collection=?', ('sample',))}
             self.assertEqual(len(urls), 3)
+            origins = {row[0] for row in connection.execute(
+                'SELECT source_url FROM receipt_origins WHERE collection=? AND body_sha256=?',
+                ('sample', entities(connection, 'sample')[0]['source']))}
+            self.assertEqual(len(origins), 2)
             connection.close()
